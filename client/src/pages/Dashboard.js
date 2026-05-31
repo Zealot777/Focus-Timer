@@ -58,7 +58,6 @@ function Dashboard() {
   );
 }
 
-// 간단한 스타일
 const cardStyle = { border: '1px solid #ddd', padding: '20px', borderRadius: '8px', textAlign: 'center' };
 const bigText = { fontSize: '24px', fontWeight: 'bold', margin: '10px 0' };
 

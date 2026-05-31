@@ -1,20 +1,15 @@
 import React, { useState, useEffect,useRef } from 'react';
 
 function TimerInput({ time, setTime }) {
-  // 입력 중인 상태를 별도로 관리하지 않고, 포커스 상태만 활용합니다.
   const [isFocused, setIsFocused] = useState(false);
   const containerRef = useRef(null);
   useEffect(() => {
     const container = containerRef.current;
 
     const handleWheel = (e) => {
-      // 1. 이벤트가 발생한 대상(target)이 input인지 확인
       const unit = e.target.getAttribute('data-unit');
       
-      // unit이 없으면(input 밖에서 스크롤하면) 무시
       if (!unit) return;
-
-      // 2. 기본 스크롤 막기
       e.preventDefault();
 
       const delta = e.deltaY < 0 ? 1 : -1;
@@ -28,12 +23,10 @@ function TimerInput({ time, setTime }) {
       });
     };
 
-    // 3. 부모 컨테이너에만 이벤트 등록 (passive: false로 스크롤 방지)
     if (container) {
       container.addEventListener('wheel', handleWheel, { passive: false });
     }
 
-    // 4. 정리 (cleanup)
     return () => {
       if (container) {
         container.removeEventListener('wheel', handleWheel);
@@ -53,9 +46,9 @@ function TimerInput({ time, setTime }) {
   };
 
   const inputStyle = {
-    width: '200px',        // 너비를 충분히 확보
+    width: '200px',        
     textAlign: 'center',
-    fontSize: '80px',      // 폰트 크기 키움
+    fontSize: '80px',      
     fontFamily: "'Orbitron', sans-serif",
     border: 'none',
     background: 'transparent',
@@ -66,7 +59,7 @@ function TimerInput({ time, setTime }) {
   const colonStyle = {
     fontSize: '80px',
     fontFamily: "'Orbitron', sans-serif",
-    paddingBottom: '10px' // 위치 미세 조정
+    paddingBottom: '10px' 
   };
   return (
     <div ref = {containerRef} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '5px' }}>

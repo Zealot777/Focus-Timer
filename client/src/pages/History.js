@@ -8,8 +8,8 @@ function History() {
   const [filterSubject, setFilterSubject] = useState('all');
   const [filterRange, setFilterRange] = useState('all'); // week, month, all
   const { subjects } = useContext(SubjectContext);
-  const [currentPage, setCurrentPage] = useState(1); // 1. 현재 페이지 상태 추가
-  const itemsPerPage = 10; // 2. 페이지당 10개 설정
+  const [currentPage, setCurrentPage] = useState(1); 
+  const itemsPerPage = 10; 
   // 데이터 로드 함수
   const loadSessions = async () => {
     const subjectId = filterSubject === 'all' ? null : filterSubject;
@@ -25,7 +25,7 @@ function History() {
   const handleDelete = async (id) => {
     if (window.confirm('정말 삭제하시겠습니까?')) {
       await fetch(`http://localhost:5000/history/${id}`, { method: 'DELETE' });
-      loadSessions(); // 삭제 후 목록 갱신
+      loadSessions(); 
     }
   };
 
@@ -46,7 +46,7 @@ function History() {
   // 페이지 계산
   const indexOfLast = currentPage * itemsPerPage;
   const indexOfFirst = indexOfLast - itemsPerPage;
-  const currentSessions = filteredSessions.slice(indexOfFirst, indexOfLast); // 현재 페이지 데이터
+  const currentSessions = filteredSessions.slice(indexOfFirst, indexOfLast); 
   const totalPages = Math.ceil(filteredSessions.length / itemsPerPage);
 
   return (
@@ -76,7 +76,6 @@ function History() {
       <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', tableLayout: 'fixed' }}>
         <thead>
           <tr style={{ borderBottom: '2px solid #333' }}>
-            {/* 2. 각 열(th)이 가질 고정 너비를 명시적으로 지정합니다 (예: 25%씩 균등 분배) */}
             <th style={{ width: '25%', padding: '10px 0' }}>날짜</th>
             <th style={{ width: '25%', padding: '10px 0' }}>과목</th>
             <th style={{ width: '25%', padding: '10px 0' }}>시간(분)</th>

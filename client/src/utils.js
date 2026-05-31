@@ -43,7 +43,6 @@ export const showTimerSetup = (subjects, onStart) => {
 
 
 export const showSubjectManager = (subjects, currentSubject, onSelect, onDelete, onAdd) => {
-  // 팝업 내부의 HTML을 구성합니다.
   const subjectListHtml = subjects.map(s => `
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; padding:5px; border-bottom:1px solid #eee;">
       <span style="font-weight: ${currentSubject?.id === s.id ? 'bold' : 'normal'}; color: ${currentSubject?.id === s.id ? '#3085d6' : '#333'}">
@@ -65,7 +64,7 @@ export const showSubjectManager = (subjects, currentSubject, onSelect, onDelete,
         <button type="button" id="add-subject-btn" class="swal2-confirm swal2-styled" style="margin:0; background-color:#3085d6">추가</button>
       </div>
     `,
-    showConfirmButton: false, // 커스텀 버튼들을 사용할 것이므로 비활성화
+    showConfirmButton: false, 
     didRender: () => {
       // 선택 버튼
       document.querySelectorAll('.select-btn').forEach(btn => {
@@ -73,14 +72,14 @@ export const showSubjectManager = (subjects, currentSubject, onSelect, onDelete,
           const sub = subjects.find(s => String(s.id) === String(btn.dataset.id));
 
           if (sub) {
-           console.log("선택된 과목 데이터:", sub); // 디버깅용 로그
-         onSelect(sub); // 여기서 Main.js의 setSelectedSubject가 호출됩니다.
+           console.log("선택된 과목 데이터:", sub); 
+         onSelect(sub); 
            Swal.close();
                    }
         else {
       console.error("과목을 찾을 수 없습니다. ID:", btn.dataset.id);
           //onSelect(sub);
-          //Swal.close(); // 선택 후 팝업 닫기
+          //Swal.close(); 
         }
       }}
       );
@@ -88,7 +87,7 @@ export const showSubjectManager = (subjects, currentSubject, onSelect, onDelete,
       document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.onclick = () => {
           onDelete(btn.dataset.id);
-          Swal.close(); // 삭제 후 목록 갱신을 위해 닫기(다시 열어야 함)
+          Swal.close(); 
         };
       });
       // 추가 버튼
@@ -135,7 +134,6 @@ export const showBreakTimer = (minutes, onStopAlarm) => {
 
     },
     didClose: () => {
-      // 팝업이 닫힐 때(X버튼 포함) 확실히 정리
       if (breakTimerInterval) {
         clearInterval(breakTimerInterval);
         breakTimerInterval = null;
