@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Focus-Timer/static/css/main.a60e73d1.css",
-    "main.js": "/Focus-Timer/static/js/main.36b7f487.js",
+    "main.js": "/Focus-Timer/static/js/main.f05bca30.js",
     "static/js/453.aea7ee55.chunk.js": "/Focus-Timer/static/js/453.aea7ee55.chunk.js",
     "index.html": "/Focus-Timer/index.html",
     "main.a60e73d1.css.map": "/Focus-Timer/static/css/main.a60e73d1.css.map",
-    "main.36b7f487.js.map": "/Focus-Timer/static/js/main.36b7f487.js.map",
+    "main.f05bca30.js.map": "/Focus-Timer/static/js/main.f05bca30.js.map",
     "453.aea7ee55.chunk.js.map": "/Focus-Timer/static/js/453.aea7ee55.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a60e73d1.css",
-    "static/js/main.36b7f487.js"
+    "static/js/main.f05bca30.js"
   ]
 }
