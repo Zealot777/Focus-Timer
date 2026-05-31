@@ -1,5 +1,6 @@
 //api.js
 const BASE_URL = process.env.REACT_APP_API_URL;
+console.log(BASE_URL);
 
 export const fetchSubjects = async () => {
   const res = await fetch(`${BASE_URL}/subjects`);
