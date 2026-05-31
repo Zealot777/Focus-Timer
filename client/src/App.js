@@ -13,7 +13,7 @@ function App() {
   return (
     <SubjectProvider>
       <TimerProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/Focus-Timer">
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />
