@@ -75,7 +75,7 @@ function Main() {
       <div className="controls" style={{ marginTop: '40px', display: 'flex', justifyContent: 'center', gap: '30px' }}>
         <button className="control-button" onClick={toggleTimer}>
           <img 
-            src={isRunning ? "/images/pause-solid-full.svg" : "/images/play-solid-full.svg"} 
+            src={isRunning ? process.env.PUBLIC_URL + "/images/pause-solid-full.svg" : process.env.PUBLIC_URL + "/images/play-solid-full.svg"} 
             alt={isRunning ? "일시정지" : "재생"} 
             className="control-icon" 
             style={{ width: '40px', height: '40px', display: 'block' }}

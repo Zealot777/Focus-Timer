@@ -8,7 +8,7 @@ export const TimerContext = createContext();
 export const TimerProvider = ({ children }) => {
   const { subjects } = useContext(SubjectContext);
 
-  const alarmRef = useRef(new Audio('/sounds/alarm.mp3'));
+  const alarmRef = useRef(new Audio(process.env.PUBLIC_URL +'/sounds/alarm.mp3'));
   
   const playAlarm = useCallback(() => {
     alarmRef.current.loop = true;
