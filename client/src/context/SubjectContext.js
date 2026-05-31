@@ -7,7 +7,7 @@ export const SubjectProvider = ({ children }) => {
   const [subjects, setSubjects] = useState([]);
   
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/subjects')
+    fetch(`${process.env.REACT_APP_API_URL}/subjects`)
       .then(res => res.json())
       .then(data => setSubjects(data));
   }, []);
