@@ -8,6 +8,10 @@ from datetime import datetime, timedelta, date
 DATA_FILE = 'data.json'
 app = Flask("focus-timer")
 CORS(app,resources={r"/*": {"origins": "*"}})
+
+@app.route('/')
+def home():
+    return "서버가 정상적으로 작동 중입니다!"
 @app.route('/subjects', methods=['GET'])
 def get_subjects():
     data = load_data()
