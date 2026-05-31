@@ -1,0 +1,27 @@
+/* src/components/Header.css */
+.nav-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.nav-link {
+  text-decoration: none; /* 밑줄 제거 */
+  color: #333;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background-color: #007bff; /* 현재 페이지 활성화 시 배경색 */
+}
