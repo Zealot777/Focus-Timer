@@ -85,7 +85,7 @@ function Main() {
         {/* 정지 버튼 */}
         <button className="control-button" onClick={resetTimer}>
           <img 
-            src=process.env.PUBLIC_URL + "/images/stop-solid-full.svg" 
+            src={process.env.PUBLIC_URL + "/images/stop-solid-full.svg"} 
             alt="정지" 
             className="control-icon" 
           />
