@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "focus-timer",
+  "homepage": "https://zealot777.github.io/Focus-Timer/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
